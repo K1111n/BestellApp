@@ -61,3 +61,11 @@ function cancelThisDishCompletly(k) {
   shopping_cart.splice(k, 1);
   renderShoppingCart();
 }
+
+function order() {
+  shopping_cart = [];
+  renderShoppingCart();
+  document.getElementById("orderSign").style =
+    "text-align:center; display:flex; justify-content:center; align-items:center; max-height: 50vh; width:100%;";
+  document.getElementById("shopping_cart").style = "display:none;";
+}
