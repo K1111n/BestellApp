@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin:0;
     background-color: #ff8008;
@@ -38,13 +41,17 @@ h1, h2{
 #menu-logo{
     width: 60px;
     height: 60px;
+    margin-top: -30px;
 }
 #shopping_cart{
     width: 25vw;
     position: sticky;
+    top: 100px;
+    right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: fit-content;
 }
 #shopping_cart img{
     width: 50px;
@@ -55,4 +62,23 @@ h1, h2{
 }
 #menu{
     text-align: center;
+}
+.price{
+    color: red;
+}
+button{
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+button:hover{
+    background-color: #ff8008;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }

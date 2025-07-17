@@ -1,5 +1,6 @@
 const menuData = [
   {
+    id: "appetizers",
     name: "Appetizers",
     image: "/Material/bruschetta.jpg",
     dishes: [
@@ -21,6 +22,7 @@ const menuData = [
     ],
   },
   {
+    id: "mainCourses",
     name: "Main Courses",
     image: "/Material/carbonara.jpg",
     dishes: [
@@ -42,6 +44,7 @@ const menuData = [
     ],
   },
   {
+    id: "desserts",
     name: "Desserts",
     image: "/Material/gelato.jpg",
     dishes: [

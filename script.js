@@ -1,3 +1,7 @@
+let cost = document.getElementById("cost");
+let fullCost = document.getElementById("fullcost");
+let shopping_cart = [];
+
 function renderMenu() {
   let menuRef = document.getElementById("menu-section");
   menuRef.innerHTML = "";
@@ -15,4 +19,31 @@ function renderDishDetails() {
       dishDetailsRef.innerHTML += dishDetailsTemplate(i, j);
     }
   }
+}
+
+function addToCart(i, j) {
+  //   let price = parseFloat(document.getElementById("price"));
+  //   cost = cost + price;
+  if (shopping_cart.includes(menuData[i].dishes[j])) {
+    return;
+  } else {
+    shopping_cart.push(menuData[i].dishes[j]);
+    renderShoppingCart();
+  }
+}
+
+function renderShoppingCart() {
+  let dishesInShoppingCartRef = document.getElementById("dishesInShoppingCart");
+  dishesInShoppingCartRef.innerHTML = "";
+  for (let k = 0; k < shopping_cart.length; k++) {
+    dishesInShoppingCartRef.innerHTML += shoppingCartTemplate(k);
+  }
+}
+
+function increase() {}
+
+function decrease() {}
+
+function cancelThisDishCompletly(k) {
+  shopping_cart.slice(k);
 }
