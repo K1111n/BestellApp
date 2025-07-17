@@ -16,12 +16,12 @@ function dishDetailsTemplate(i, j) {
             `;
 }
 
-function shoppingCartTemplate(k, m) {
+function shoppingCartTemplate(k, price) {
   return /*html*/ `
-    <p>${shopping_cart[k].name}</p> <p>${shopping_cart[k].price} $</p> <p id="amount"></p> 
-    <button onclick="increase()">+</button> 
-    <button onclick="decrease()">-</button> 
-    <button onclick="cancelThisDishCompletly(k)">X</button>
-    <br>
+    <p>${shopping_cart[k].name}</p> <p>${price} $</p> <p id="amount">${shopping_cart[k].amount}</p> 
+    <button onclick="increase(${k})">+</button> 
+    <button onclick="decrease(${k})">-</button> 
+    <button onclick="cancelThisDishCompletly(${k})">X</button>
+    <br>    
     `;
 }

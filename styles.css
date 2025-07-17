@@ -77,6 +77,9 @@ a{
     text-decoration: none;
     color: white;
 }
+a:hover{
+    color:#ff8008;
+}
 nav{
     display: flex;
     justify-content: center;

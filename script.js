@@ -22,28 +22,42 @@ function renderDishDetails() {
 }
 
 function addToCart(i, j) {
-  //   let price = parseFloat(document.getElementById("price"));
-  //   cost = cost + price;
   if (shopping_cart.includes(menuData[i].dishes[j])) {
-    return;
+    menuData[i].dishes[j].amount++;
   } else {
     shopping_cart.push(menuData[i].dishes[j]);
-    renderShoppingCart();
   }
+  renderShoppingCart();
 }
 
 function renderShoppingCart() {
   let dishesInShoppingCartRef = document.getElementById("dishesInShoppingCart");
   dishesInShoppingCartRef.innerHTML = "";
+  fullCost = 0;
   for (let k = 0; k < shopping_cart.length; k++) {
-    dishesInShoppingCartRef.innerHTML += shoppingCartTemplate(k);
+    let amount = `${shopping_cart[k].amount}`;
+    let priceForOne = `${shopping_cart[k].price}`;
+    let price = amount * priceForOne;
+    dishesInShoppingCartRef.innerHTML += shoppingCartTemplate(k, price);
+    fullCost += price;
+  }
+  let fullcostRef = document.getElementById("fullCost");
+  fullcostRef.innerHTML = fullCost;
+}
+
+function increase(k) {
+  shopping_cart[k].amount++;
+  renderShoppingCart();
+}
+
+function decrease(k) {
+  if (shopping_cart[k].amount != 1) {
+    shopping_cart[k].amount--;
+    renderShoppingCart();
   }
 }
 
-function increase() {}
-
-function decrease() {}
-
 function cancelThisDishCompletly(k) {
-  shopping_cart.slice(k);
+  shopping_cart.splice(k, 1);
+  renderShoppingCart();
 }
