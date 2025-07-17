@@ -38,6 +38,7 @@ function renderShoppingCart() {
     let amount = `${shopping_cart[k].amount}`;
     let priceForOne = `${shopping_cart[k].price}`;
     let price = amount * priceForOne;
+    price = parseFloat(price.toFixed(2));
     dishesInShoppingCartRef.innerHTML += shoppingCartTemplate(k, price);
     fullCost += price;
   }
