@@ -11,8 +11,46 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
+    <script src="templates.js"></script>
+    <script src="array.js"></script>
   </head>
-  <body>
-    <img src="/Material/Logo/Logo.png" alt="Logo" />
+  <body onload="renderMenu()">
+    <header>
+      <img src="/Material/Logo.png" alt="Logo" />
+    </header>
+    <main>
+      <section id="menu">
+        <img src="/Material/lasagna.jpg" alt="lasagna" class="menu-img" />
+        <img
+          src="/Material/chef-logo.png"
+          alt="cheflogo"
+          style="z-index: 1"
+          id="menu-logo"
+        />
+        <h1>Paradise Noodles</h1>
+        <p style="color: orange">Bewertung (4,2 von 5 Sternen)</p>
+
+        <section id="menu-section"></section>
+      </section>
+
+      <section id="shopping_cart">
+        <h2>Warenkorb</h2>
+        <br />
+        <img src="/Material/shopping_cart.png" alt="shopping_cart" />
+        <p>Zwischensumme:</p>
+        <p id="cost"></p>
+        <br />
+        <p>Lieferkosten:</p>
+        <p id="deliveryCost"></p>
+        <br />
+        <b
+          ><p>Gesamtkosten:</p>
+          <p id="fullCost"></p></b
+        ><br />
+      </section>
+    </main>
+    <footer>
+      <img src="/Material/Logo.png" alt="Logo" />
+    </footer>
   </body>
 </html>
