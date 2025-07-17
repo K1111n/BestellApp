@@ -1,0 +1,10 @@
+body{
+    margin:0;
+    background-color: #ff8008;
+    color: wheat;
+}
+img{
+    height: 100px;
+    width: 200px;
+    padding: 10px;
+}
