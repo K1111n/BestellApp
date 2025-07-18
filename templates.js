@@ -9,10 +9,16 @@ function dishesTemplate(i) {
 
 function dishDetailsTemplate(i, j) {
   return /*html*/ `
-  <h3>${menuData[i].dishes[j].name}</h3>
-  <p>${menuData[i].dishes[j].description}</p>
-  <p id="price">${menuData[i].dishes[j].price.toFixed(2)} $</p>
-  <button onclick="addToCart(${i},${j})">Add (+) to Cart</button><br>
+  <div class="fullDish">
+    <div class="dish">
+      <h3>${menuData[i].dishes[j].name}</h3>
+      <p>${menuData[i].dishes[j].description}</p>
+      <p id="price">${menuData[i].dishes[j].price.toFixed(2)} $</p>
+    </div>
+    <div class="addButton">
+      <button onclick="addToCart(${i},${j})">Add (+) to Cart</button><br>
+    </div>
+  </div>
             `;
 }
 

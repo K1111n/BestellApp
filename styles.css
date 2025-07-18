@@ -109,6 +109,17 @@ nav{
 #orderSign p{
     font-size: small;
 }
+.fullDish{
+    display: flex;
+}
+.dish{
+    width: 70%;
+}
+.addButton{
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
 
 @media (max-width:700px) {
     main{
