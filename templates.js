@@ -23,7 +23,6 @@ function dishDetailsTemplate(i, j) {
 }
 
 /*Formatierung macht mir die prettier-Erweiterung kaputt*/
-
 function shoppingCartTemplate(k, price) {
   return /*html*/ `  
     <div class="shoppingDetails">
