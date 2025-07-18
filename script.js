@@ -66,9 +66,13 @@ function cancelThisDishCompletly(k) {
 }
 
 function order() {
-  shopping_cart = [];
-  renderShoppingCart();
-  document.getElementById("orderSign").style =
-    "text-align:center; display:flex; justify-content:center; align-items:center; max-height: 50vh; width:100%;";
-  document.getElementById("shopping_cart").style = "display:none;";
+  if (shopping_cart.length === 0) {
+    return;
+  } else {
+    shopping_cart = [];
+    renderShoppingCart();
+    document.getElementById("orderSign").style =
+      "text-align:center; display:flex; justify-content:center; align-items:center; max-height: 50vh; width:100%;";
+    document.getElementById("shopping_cart").style = "display:none;";
+  }
 }

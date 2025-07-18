@@ -114,14 +114,14 @@ nav{
     main{
         flex-direction: column;
     }
-    #menu {
+    /* #menu {
         width: 100%;
     }
     #shopping_cart{
         width: 40%;
-    }
+    } */
     #orderSign{
         min-height: 300px;
-        width: 40%;
+        /* width: 40%; */
     }
 }
