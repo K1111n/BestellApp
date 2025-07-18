@@ -21,19 +21,24 @@ function renderDishDetails() {
   }
 }
 
+function changeTextToAddItem(i, j) {
+  let addButtonRef = document.getElementById(`addButton_${i}${j}`);
+  addButtonRef.innerHTML = "Add Item";
+}
+
 function addToCart(i, j) {
   if (shopping_cart.includes(menuData[i].dishes[j])) {
     menuData[i].dishes[j].amount++;
   } else {
     shopping_cart.push(menuData[i].dishes[j]);
   }
-  let addButtonRef = document.getElementById("addButton");
+  let addButtonRef = document.getElementById(`addButton_${i}${j}`);
   addButtonRef.innerHTML = "Item added";
   renderShoppingCart();
 }
 
-function changeTextToOrigin() {
-  let addButtonRef = document.getElementById("addButton");
+function changeTextToOrigin(i, j) {
+  let addButtonRef = document.getElementById(`addButton_${i}${j}`);
   addButtonRef.innerHTML = "Add (+) to Cart";
 }
 
@@ -55,6 +60,9 @@ function renderShoppingCart() {
     "fullCostInSmallCartAtBottom"
   );
   fullcostInSmallCartAtBottomRef.innerHTML = fullCost.toFixed(2);
+}
+
+function showCartAgain() {
   document.getElementById("orderSign").style = "display:none;";
   document.getElementById("shopping_cart").style = "display:flex;";
 }
@@ -92,5 +100,38 @@ function order() {
     document.getElementById("orderSign").style =
       "text-align:center; display:flex; justify-content:center; align-items:center; max-height: 50vh; width:100%;";
     document.getElementById("shopping_cart").style = "display:none;";
+  }
+}
+
+function orderFromDialog() {
+  shopping_cart = [];
+  let fullcostInSmallCartAtBottomRef = document.getElementById(
+    "fullCostInSmallCartAtBottom"
+  );
+  fullcostInSmallCartAtBottomRef.innerHTML = 0;
+  dialog.close();
+}
+
+function closeDialog() {
+  dialog.close();
+}
+
+function showCart() {
+  if (shopping_cart.length === 0) {
+    return;
+  } else if (!dialog.open) {
+    let dialogRef = document.getElementById("dialog");
+    dialogRef.innerHTML = "";
+    for (let k = 0; k < shopping_cart.length; k++) {
+      let amount = `${shopping_cart[k].amount}`;
+      let priceForOne = `${shopping_cart[k].price}`;
+      let price = amount * priceForOne;
+      price = parseFloat(price.toFixed(2));
+      dialogRef.innerHTML += dialogTemplate(k, price);
+      dialog.showModal();
+    }
+    dialogRef.innerHTML += toOrderButtonTemplate();
+  } else {
+    dialog.close();
   }
 }
