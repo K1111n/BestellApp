@@ -109,11 +109,17 @@ function orderFromDialog() {
     "fullCostInSmallCartAtBottom"
   );
   fullcostInSmallCartAtBottomRef.innerHTML = 0;
-  dialog.close();
+  shopping_cart = [];
+  renderShoppingCart();
+  let dialogRef = document.getElementById("dialog");
+  dialogRef.close();
+  let dialogAfterOrderRef = document.getElementById("dialogAfterOrder");
+  dialogAfterOrderRef.showModal();
 }
 
 function closeDialog() {
-  dialog.close();
+  let dialogAfterOrderRef = document.getElementById("dialogAfterOrder");
+  dialogAfterOrderRef.close();
 }
 
 function showCart() {
@@ -128,10 +134,10 @@ function showCart() {
       let price = amount * priceForOne;
       price = parseFloat(price.toFixed(2));
       dialogRef.innerHTML += dialogTemplate(k, price);
-      dialog.showModal();
+      dialogRef.showModal();
     }
     dialogRef.innerHTML += toOrderButtonTemplate();
   } else {
-    dialog.close();
+    dialogRef.close();
   }
 }
