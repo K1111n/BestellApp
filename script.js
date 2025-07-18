@@ -44,6 +44,8 @@ function renderShoppingCart() {
   }
   let fullcostRef = document.getElementById("fullCost");
   fullcostRef.innerHTML = fullCost.toFixed(2);
+  document.getElementById("orderSign").style = "display:none;";
+  document.getElementById("shopping_cart").style = "display:flex;";
 }
 
 function increase(k) {
