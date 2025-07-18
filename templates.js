@@ -16,7 +16,7 @@ function dishDetailsTemplate(i, j) {
       <p id="price">${menuData[i].dishes[j].price.toFixed(2)} $</p>
     </div>
     <div class="addButton">
-      <button onclick="addToCart(${i},${j})">Add (+) to Cart</button><br>
+      <button onclick="addToCart(${i},${j})" onmouseleave="changeTextToOrigin()" id="addButton">Add (+) to Cart</button><br>
     </div>
   </div>
             `;
