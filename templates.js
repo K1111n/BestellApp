@@ -11,7 +11,7 @@ function dishDetailsTemplate(i, j) {
   return /*html*/ `
   <h3>${menuData[i].dishes[j].name}</h3>
   <p>${menuData[i].dishes[j].description}</p>
-  <p id="price">${menuData[i].dishes[j].price} $</p>
+  <p id="price">${menuData[i].dishes[j].price.toFixed(2)} $</p>
   <button onclick="addToCart(${i},${j})">Add (+) to Cart</button><br>
             `;
 }
@@ -19,9 +19,11 @@ function dishDetailsTemplate(i, j) {
 function shoppingCartTemplate(k, price) {
   return /*html*/ `  
 <div class="shoppingDetails">
-    <p>${shopping_cart[k].name}</p> <p>x</p> <p id="amount">${shopping_cart[k].amount}</p> 
+    <p>${shopping_cart[k].name}</p> <p>x</p> <p id="amount">${
+    shopping_cart[k].amount
+  }</p> 
 </div>
-    <p>${price} $</p> 
+    <p>${price.toFixed(2)} $</p> 
     <button onclick="increase(${k})">+</button> 
     <button onclick="decrease(${k})">-</button> 
     <button onclick="cancelThisDishCompletly(${k})">X</button>
