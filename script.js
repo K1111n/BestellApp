@@ -43,7 +43,7 @@ function renderShoppingCart() {
     fullCost += price;
   }
   let fullcostRef = document.getElementById("fullCost");
-  fullcostRef.innerHTML = fullCost;
+  fullcostRef.innerHTML = fullCost.toFixed(2);
 }
 
 function increase(k) {
