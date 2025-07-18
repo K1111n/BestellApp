@@ -29,10 +29,6 @@ main{
     color: white;    
     display: flex;
 }
-.warenkorb{
-    display: flex;
-    align-items: center;
-}
 h1, h2{
     text-align: center;
 }

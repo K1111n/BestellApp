@@ -22,13 +22,15 @@ function dishDetailsTemplate(i, j) {
             `;
 }
 
+/*Formatierung macht mir die prettier-Erweiterung kaputt*/
+
 function shoppingCartTemplate(k, price) {
   return /*html*/ `  
-<div class="shoppingDetails">
-    <p>${shopping_cart[k].name}</p> <p>x</p> <p id="amount">${
+    <div class="shoppingDetails">
+        <p>${shopping_cart[k].name}</p> <p>x</p> <p id="amount">${
     shopping_cart[k].amount
   }</p> 
-</div>
+    </div>
     <p>${price.toFixed(2)} $</p> 
     <button onclick="increase(${k})">+</button> 
     <button onclick="decrease(${k})">-</button> 
@@ -44,7 +46,7 @@ function dialogTemplate(k, price) {
     shopping_cart[k].amount
   }</p> 
 </div>
-    <p>${price.toFixed(2)} $</p> 
+<p>${price.toFixed(2)} $</p> 
     <br>    
     `;
 }
