@@ -60,6 +60,7 @@ function renderShoppingCart() {
     "fullCostInSmallCartAtBottom"
   );
   fullcostInSmallCartAtBottomRef.innerHTML = fullCost.toFixed(2);
+  document.getElementById("orderButton").classList.remove("d_none");
 }
 
 function renderOrderedSign() {
@@ -69,11 +70,7 @@ function renderOrderedSign() {
   dishesInShoppingCartRef.innerHTML = orderedTemplate();
   let fullcostRef = document.getElementById("fullCost");
   fullcostRef.innerHTML = fullCost.toFixed(2);
-}
-
-function showCartAgain() {
-  document.getElementById("orderSign").style = "display:none;";
-  document.getElementById("shopping_cart").style = "display:flex;";
+  document.getElementById("orderButton").classList.add("d_none");
 }
 
 function increase(k) {

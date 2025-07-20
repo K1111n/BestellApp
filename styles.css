@@ -138,6 +138,9 @@ dialog{
     background-color: black;
     color:#ff8008;
 }
+.d_none{
+    display: none;
+}
 
 @media (max-width:1000px) {
     #shopping_cart{
