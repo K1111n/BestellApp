@@ -62,6 +62,15 @@ function renderShoppingCart() {
   fullcostInSmallCartAtBottomRef.innerHTML = fullCost.toFixed(2);
 }
 
+function renderOrderedSign() {
+  let dishesInShoppingCartRef = document.getElementById("dishesInShoppingCart");
+  dishesInShoppingCartRef.innerHTML = "";
+  fullCost = 0;
+  dishesInShoppingCartRef.innerHTML = orderedTemplate();
+  let fullcostRef = document.getElementById("fullCost");
+  fullcostRef.innerHTML = fullCost.toFixed(2);
+}
+
 function showCartAgain() {
   document.getElementById("orderSign").style = "display:none;";
   document.getElementById("shopping_cart").style = "display:flex;";
@@ -96,10 +105,7 @@ function order() {
     return;
   } else {
     shopping_cart = [];
-    renderShoppingCart();
-    document.getElementById("orderSign").style =
-      "text-align:center; display:flex; justify-content:center; align-items:center; max-height: 50vh; width:100%;";
-    document.getElementById("shopping_cart").style = "display:none;";
+    renderOrderedSign();
   }
 }
 

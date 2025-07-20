@@ -49,7 +49,6 @@ h1, h2{
 }
 #shopping_cart{
     width: 25vw;
-    min-width: 400px;
     position: sticky;
     top: 100px;
     right: 0;
@@ -96,16 +95,6 @@ nav{
     display: flex;
     gap: 5px;
 }
-#orderSign{
-    font-size: 30px;
-    position: sticky;
-    top: 100px;
-    right: 0;
-    flex-direction: column;
-}
-#orderSign p{
-    font-size: small;
-}
 .fullDish{
     display: flex;
 }
@@ -150,15 +139,12 @@ dialog{
     color:#ff8008;
 }
 
-@media (max-width:800px) {
-    #orderSign{
-        min-height: 300px;
-    }
+@media (max-width:1000px) {
     #shopping_cart{
         display: none;
     }
 }
-@media (min-width:800px) {
+@media (min-width:1000px) {
     #smallCartContainer{
         display: none;
     }
