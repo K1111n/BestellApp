@@ -41,7 +41,8 @@ function shoppingCartTemplate(k, price) {
 function orderedTemplate() {
   return /*html*/ `
         <h4>Order placed successfully.</h4><br>
-        <p style="text-align:center">To continue shopping, <br><br><button onclick="renderShoppingCart()">press here</button>.</p>`;
+        <p style="text-align:center;">To continue shopping, <br><br><button onclick="renderShoppingCart()">press here</button>.</p>  
+  `;
 }
 
 function dialogTemplate(k, price) {
@@ -57,5 +58,5 @@ function dialogTemplate(k, price) {
 }
 
 function toOrderButtonTemplate() {
-  return /*html*/ `<button onclick="orderFromDialog()">To Order</button>`;
+  return /*html*/ `<button onclick="orderFromDialog()">Order here</button>`;
 }
