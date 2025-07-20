@@ -15,14 +15,13 @@ function dishDetailsTemplate(i, j) {
       <p>${menuData[i].dishes[j].description}</p>
       <p id="price">${menuData[i].dishes[j].price.toFixed(2)} $</p>
     </div>
-    <div class="addButton">
-      <button onmouseenter="changeTextToAddItem(${i},${j})" onclick="addToCart(${i},${j})" onmouseleave="changeTextToOrigin(${i},${j})" id="addButton_${i}${j}" class="addButton">Add (+) to Cart</button><br>
+    <div class="addButtonContainer">
+      <img src="/Material/plusIcon.png" alt="plusIcon" onclick="addToCart(${i},${j})" class="addButton" id="addButton_${i}${j}"><br>
     </div>
   </div>
             `;
 }
 
-/*Formatierung macht mir die prettier-Erweiterung kaputt*/
 function shoppingCartTemplate(k, price) {
   return /*html*/ `  
     <div class="shoppingDetails">

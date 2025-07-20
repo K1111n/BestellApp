@@ -21,11 +21,6 @@ function renderDishDetails() {
   }
 }
 
-function changeTextToAddItem(i, j) {
-  let addButtonRef = document.getElementById(`addButton_${i}${j}`);
-  addButtonRef.innerHTML = "Add Item";
-}
-
 function addToCart(i, j) {
   if (shopping_cart.includes(menuData[i].dishes[j])) {
     menuData[i].dishes[j].amount++;
@@ -35,11 +30,6 @@ function addToCart(i, j) {
   let addButtonRef = document.getElementById(`addButton_${i}${j}`);
   addButtonRef.innerHTML = "Item added";
   renderShoppingCart();
-}
-
-function changeTextToOrigin(i, j) {
-  let addButtonRef = document.getElementById(`addButton_${i}${j}`);
-  addButtonRef.innerHTML = "Add (+) to Cart";
 }
 
 function renderShoppingCart() {

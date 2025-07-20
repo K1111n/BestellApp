@@ -101,10 +101,17 @@ nav{
 .dish{
     width: 70%;
 }
-.addButton{
+.addButtonContainer{
     display: flex;
     align-items: center;
-    width: 30%;
+}
+.addButton{
+    width: 40px;
+    height: 40px;
+}
+.addButton:hover{
+    cursor: pointer;
+    opacity: 0.5;
 }
 #smallCartContainer{
     display: flex;
@@ -127,12 +134,6 @@ nav{
 #smallCartAtBottom:hover{
     cursor: pointer;
     background-color: #ff8008;
-}
-.addButton{
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
 }
 dialog{
     background-color: black;
