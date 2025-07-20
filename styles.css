@@ -97,6 +97,7 @@ nav{
 }
 .fullDish{
     display: flex;
+    justify-content: space-around;
 }
 .dish{
     width: 70%;
