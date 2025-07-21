@@ -28,12 +28,13 @@ main{
     background-color: black;
     color: white;    
     display: flex;
+    width: 100%;
 }
 h1, h2{
     text-align: center;
 }
 #menu{
-    width: 75vw;
+    width: 75%;
     text-align: center;
 }
 .menu-img{
@@ -48,7 +49,7 @@ h1, h2{
     margin-top: -30px;
 }
 #shopping_cart{
-    width: 25vw;
+    width: 25%;
     position: sticky;
     top: 100px;
     right: 0;
@@ -159,6 +160,9 @@ dialog{
 @media (max-width:1000px) {
     #shopping_cart{
         display: none;
+    }
+    #menu{
+        width: 100%;
     }
 }
 @media (min-width:1000px) {
