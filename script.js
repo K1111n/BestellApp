@@ -44,13 +44,17 @@ function renderShoppingCart() {
     dishesInShoppingCartRef.innerHTML += shoppingCartTemplate(k, price);
     fullCost += price;
   }
+  changeFullCost();
+  document.getElementById("orderButton").classList.remove("d_none");
+}
+
+function changeFullCost() {
   let fullcostRef = document.getElementById("fullCost");
   fullcostRef.innerHTML = fullCost.toFixed(2);
   let fullcostInSmallCartAtBottomRef = document.getElementById(
     "fullCostInSmallCartAtBottom"
   );
   fullcostInSmallCartAtBottomRef.innerHTML = fullCost.toFixed(2);
-  document.getElementById("orderButton").classList.remove("d_none");
 }
 
 function renderOrderedSign() {
@@ -114,22 +118,24 @@ function closeDialog() {
   dialogAfterOrderRef.close();
 }
 
+function renderDialog() {
+  let dialogRef = document.getElementById("dialog");
+  dialogRef.innerHTML = "";
+  for (let k = 0; k < shopping_cart.length; k++) {
+    let amount = `${shopping_cart[k].amount}`;
+    let priceForOne = `${shopping_cart[k].price}`;
+    let price = amount * priceForOne;
+    price = parseFloat(price.toFixed(2));
+    dialogRef.innerHTML += dialogTemplate(k, price);
+    dialogRef.showModal();
+  }
+  dialogRef.innerHTML += toOrderButtonTemplate();
+}
+
 function showCart() {
   if (shopping_cart.length === 0) {
     return;
   } else if (!dialog.open) {
-    let dialogRef = document.getElementById("dialog");
-    dialogRef.innerHTML = "";
-    for (let k = 0; k < shopping_cart.length; k++) {
-      let amount = `${shopping_cart[k].amount}`;
-      let priceForOne = `${shopping_cart[k].price}`;
-      let price = amount * priceForOne;
-      price = parseFloat(price.toFixed(2));
-      dialogRef.innerHTML += dialogTemplate(k, price);
-      dialogRef.showModal();
-    }
-    dialogRef.innerHTML += toOrderButtonTemplate();
-  } else {
-    dialogRef.close();
+    renderDialog();
   }
 }
