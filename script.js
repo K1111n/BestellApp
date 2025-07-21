@@ -56,7 +56,6 @@ function renderShoppingCart() {
 function renderOrderedSign() {
   let dishesInShoppingCartRef = document.getElementById("dishesInShoppingCart");
   dishesInShoppingCartRef.innerHTML = "";
-  fullCost = 0;
   dishesInShoppingCartRef.innerHTML = orderedTemplate();
   let fullcostRef = document.getElementById("fullCost");
   fullcostRef.innerHTML = fullCost.toFixed(2);
