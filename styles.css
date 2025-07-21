@@ -163,9 +163,11 @@ dialog{
 .crossImg{
     height: 30px;
     width: 30px;
+    opacity: 0.7;
+    cursor: pointer;
 }
 .crossImg:hover{
-    opacity: 0.5;
+    opacity: 0.9;
 }
 
 @media (max-width:1000px) {
