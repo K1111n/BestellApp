@@ -156,6 +156,17 @@ dialog{
 .d_none{
     display: none;
 }
+.cross{
+    display: flex;
+    justify-content: flex-end;
+}
+.crossImg{
+    height: 30px;
+    width: 30px;
+}
+.crossImg:hover{
+    opacity: 0.5;
+}
 
 @media (max-width:1000px) {
     #shopping_cart{

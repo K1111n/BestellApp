@@ -114,6 +114,8 @@ function orderFromDialog() {
 }
 
 function closeDialog() {
+  let dialogRef = document.getElementById("dialog");
+  dialogRef.close();
   let dialogAfterOrderRef = document.getElementById("dialogAfterOrder");
   dialogAfterOrderRef.close();
 }
@@ -121,6 +123,7 @@ function closeDialog() {
 function renderDialog() {
   let dialogRef = document.getElementById("dialog");
   dialogRef.innerHTML = "";
+  dialogRef.innerHTML += crossInDialogTemplate();
   for (let k = 0; k < shopping_cart.length; k++) {
     let amount = `${shopping_cart[k].amount}`;
     let priceForOne = `${shopping_cart[k].price}`;

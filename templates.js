@@ -58,6 +58,11 @@ function dialogTemplate(k, price) {
     `;
 }
 
+function crossInDialogTemplate() {
+  return /*html*/ `
+              <div class="cross"><img src="/Material/cross.png" alt="cross" onclick="closeDialog()" class="crossImg"></div>`;
+}
+
 function toOrderButtonTemplate() {
   return /*html*/ `<button onclick="orderFromDialog()">Order here</button>`;
 }
