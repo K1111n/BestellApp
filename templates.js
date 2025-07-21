@@ -26,16 +26,18 @@ function shoppingCartTemplate(k, price) {
   return /*html*/ `  
   <br>
     <div class="shoppingDetails">
-        <p>${shopping_cart[k].name}</p> <p>x</p> <p id="amount">${
-    shopping_cart[k].amount
-  }</p> 
+        <p>${shopping_cart[k].name}</p> 
+        <p>${price.toFixed(2)} $</p> 
     </div>
     <div class="cartDetails">
-    <p>${price.toFixed(2)} $</p> 
+      <div style="display:flex;align-items:center;gap:5px">
     <button onclick="increase(${k})">+</button> 
+    <p id="amount">${shopping_cart[k].amount}</p>
     <button onclick="decrease(${k})">-</button> 
+    </div>
+    <div>
     <button onclick="cancelThisDishCompletly(${k})">X</button>
-    <br>    </div>
+    <br>    </div></div>
     `;
 }
 
