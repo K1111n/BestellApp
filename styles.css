@@ -70,9 +70,12 @@ h1, h2{
 }
 button{
     cursor: pointer;
+    background-color: #ff8008;
+    font-weight: bold;
+    color: white;
 }
 button:hover{
-    background-color: #ff8008;
+    background-color: orange;
 }
 a{
     text-decoration: none;
@@ -93,6 +96,7 @@ nav{
 }
 .shoppingDetails{
     display: flex;
+    align-items: center;
     gap: 5px;
 }
 .fullDish{
@@ -101,6 +105,12 @@ nav{
 }
 .dish{
     width: 70%;
+}
+.cartDetails{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 .addButtonContainer{
     display: flex;
