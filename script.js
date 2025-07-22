@@ -22,9 +22,14 @@ function renderDishDetails() {
 }
 
 function addToCart(i, j) {
-  if (shopping_cart.includes(menuData[i].dishes[j])) {
-    menuData[i].dishes[j].amount++;
-  } else {
+  let found = false;
+  for (let k = 0; k < shopping_cart.length; k++) {
+    if (shopping_cart[k].name == menuData[i].dishes[j].name) {
+      shopping_cart[k].amount++;
+      found = true;
+    }
+  }
+  if (!found) {
     shopping_cart.push(menuData[i].dishes[j]);
   }
   saveAnythingLocalStorage();
