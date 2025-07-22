@@ -122,14 +122,7 @@ function decreaseInDialog(k) {
 }
 
 function cancelThisDishCompletly(k) {
-  let removedDish = shopping_cart.splice(k, 1);
-  for (let i = 0; i < menuData.length; i++) {
-    for (let j = 0; j < menuData[i].dishes.length; j++) {
-      if (menuData[i].dishes[j].id === removedDish.id) {
-        menuData[i].dishes[j].amount = 1;
-      }
-    }
-  }
+  shopping_cart.splice(k, 1);
   saveAnythingLocalStorage();
   renderShoppingCart();
   if (shopping_cart.length == 0) {
@@ -138,14 +131,7 @@ function cancelThisDishCompletly(k) {
 }
 
 function cancelThisDishCompletlyInDialog(k) {
-  let removedDish = shopping_cart.splice(k, 1);
-  for (let i = 0; i < menuData.length; i++) {
-    for (let j = 0; j < menuData[i].dishes.length; j++) {
-      if (menuData[i].dishes[j].id === removedDish.id) {
-        menuData[i].dishes[j].amount = 1;
-      }
-    }
-  }
+  shopping_cart.splice(k, 1);
   saveAnythingLocalStorage();
   renderDialog();
   renderShoppingCart();
