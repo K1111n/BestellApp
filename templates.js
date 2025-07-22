@@ -30,14 +30,12 @@ function shoppingCartTemplate(k, price) {
         <p>${price.toFixed(2)} $</p> 
     </div>
     <div class="cartDetails">
-      <div style="display:flex;align-items:center;gap:5px">
-    <button onclick="increase(${k})">+</button> 
-    <p id="amount">${shopping_cart[k].amount}</p>
-    <button onclick="decrease(${k})">-</button> 
+        <div style="display:flex;align-items:center;gap:5px">
+              <button onclick="increase(${k})">+</button> 
+              <p id="amount">${shopping_cart[k].amount}</p>
+              <button onclick="decrease(${k})">-</button> 
+        </div>
     </div>
-    <div>
-    <button onclick="cancelThisDishCompletly(${k})">X</button>
-    <br>    </div></div>
     `;
 }
 

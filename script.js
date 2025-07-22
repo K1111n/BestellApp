@@ -77,6 +77,8 @@ function decrease(k) {
     shopping_cart[k].amount--;
     saveAnythingLocalStorage();
     renderShoppingCart();
+  } else {
+    cancelThisDishCompletly(k);
   }
 }
 
