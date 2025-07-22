@@ -54,9 +54,9 @@ function dialogTemplate(k, price) {
 </div>
 <div class="cartDetails">
         <div class="cartDetailsDiv">
-              <button onclick="increase(${k})">+</button> 
+              <button onclick="increaseInDialog(${k})">+</button> 
               <p id="amount">${shopping_cart[k].amount}</p>
-              <button onclick="decrease(${k})">-</button> 
+              <button onclick="decreaseInDialog(${k})">-</button> 
         </div>
     </div>
     <br>    

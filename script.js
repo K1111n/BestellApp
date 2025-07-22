@@ -86,7 +86,13 @@ function increase(k) {
   shopping_cart[k].amount++;
   saveAnythingLocalStorage();
   renderShoppingCart();
+}
+
+function increaseInDialog(k) {
+  shopping_cart[k].amount++;
+  saveAnythingLocalStorage();
   renderDialog();
+  renderShoppingCart();
 }
 
 function decrease(k) {
@@ -94,9 +100,19 @@ function decrease(k) {
     shopping_cart[k].amount--;
     saveAnythingLocalStorage();
     renderShoppingCart();
-    renderDialog();
   } else {
     cancelThisDishCompletly(k);
+  }
+}
+
+function decreaseInDialog(k) {
+  if (shopping_cart[k].amount != 1) {
+    shopping_cart[k].amount--;
+    saveAnythingLocalStorage();
+    renderDialog();
+    renderShoppingCart();
+  } else {
+    cancelThisDishCompletlyInDialog(k);
   }
 }
 
@@ -111,7 +127,23 @@ function cancelThisDishCompletly(k) {
   }
   saveAnythingLocalStorage();
   renderShoppingCart();
+  if (shopping_cart.length == 0) {
+    closeDialog();
+  }
+}
+
+function cancelThisDishCompletlyInDialog(k) {
+  let removedDish = shopping_cart.splice(k, 1);
+  for (let i = 0; i < menuData.length; i++) {
+    for (let j = 0; j < menuData[i].dishes.length; j++) {
+      if (menuData[i].dishes[j].id === removedDish.id) {
+        menuData[i].dishes[j].amount = 1;
+      }
+    }
+  }
+  saveAnythingLocalStorage();
   renderDialog();
+  renderShoppingCart();
   if (shopping_cart.length == 0) {
     closeDialog();
   }
