@@ -27,12 +27,12 @@ function addToCart(i, j) {
   } else {
     shopping_cart.push(menuData[i].dishes[j]);
   }
-  let addButtonRef = document.getElementById(`addButton_${i}${j}`);
-  addButtonRef.innerHTML = "Item added";
+  saveAnythingLocalStorage();
   renderShoppingCart();
 }
 
 function renderShoppingCart() {
+  getAnythingLocalStorage();
   let dishesInShoppingCartRef = document.getElementById("dishesInShoppingCart");
   dishesInShoppingCartRef.innerHTML = "";
   fullCost = 0;
@@ -68,12 +68,14 @@ function renderOrderedSign() {
 
 function increase(k) {
   shopping_cart[k].amount++;
+  saveAnythingLocalStorage();
   renderShoppingCart();
 }
 
 function decrease(k) {
   if (shopping_cart[k].amount != 1) {
     shopping_cart[k].amount--;
+    saveAnythingLocalStorage();
     renderShoppingCart();
   }
 }
@@ -87,6 +89,7 @@ function cancelThisDishCompletly(k) {
       }
     }
   }
+  saveAnythingLocalStorage();
   renderShoppingCart();
 }
 
@@ -97,6 +100,7 @@ function order() {
     shopping_cart = [];
     renderOrderedSign();
   }
+  saveAnythingLocalStorage();
 }
 
 function orderFromDialog() {
@@ -111,6 +115,7 @@ function orderFromDialog() {
   dialogRef.close();
   let dialogAfterOrderRef = document.getElementById("dialogAfterOrder");
   dialogAfterOrderRef.showModal();
+  saveAnythingLocalStorage();
 }
 
 function closeDialog() {
@@ -121,6 +126,7 @@ function closeDialog() {
 }
 
 function renderDialog() {
+  getAnythingLocalStorage();
   let dialogRef = document.getElementById("dialog");
   dialogRef.innerHTML = "";
   dialogRef.innerHTML += crossInDialogTemplate();
@@ -140,5 +146,37 @@ function showCart() {
     return;
   } else if (!dialog.open) {
     renderDialog();
+  }
+}
+
+function saveAnythingLocalStorage() {
+  saveMenuDataToLocalStorage();
+  saveShoppingCartToLocalStorage();
+}
+
+function getAnythingLocalStorage() {
+  getMenuDataToLocalStorage();
+  getShoppingCartToLocalStorage();
+}
+
+function saveMenuDataToLocalStorage() {
+  localStorage.setItem("menuData", JSON.stringify(menuData));
+}
+
+function getMenuDataToLocalStorage() {
+  let myArrMenuData = JSON.parse(localStorage.getItem("menuData"));
+  if (myArrMenuData != null) {
+    menuData = myArrMenuData;
+  }
+}
+
+function saveShoppingCartToLocalStorage() {
+  localStorage.setItem("shopping_cart", JSON.stringify(shopping_cart));
+}
+
+function getShoppingCartToLocalStorage() {
+  let myArrShoppingCart = JSON.parse(localStorage.getItem("shopping_cart"));
+  if (myArrShoppingCart != null) {
+    shopping_cart = myArrShoppingCart;
   }
 }
