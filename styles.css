@@ -58,6 +58,10 @@ h1, h2{
     align-items: center;
     height: fit-content;
     z-index: 2;
+    border: 1px solid orange;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
 }
 #shopping_cart img{
     width: 50px;
