@@ -30,7 +30,7 @@ function shoppingCartTemplate(k, price) {
         <p>${price.toFixed(2)} $</p> 
     </div>
     <div class="cartDetails">
-        <div style="display:flex;align-items:center;gap:5px">
+        <div class="cartDetailsDiv">
               <button onclick="increase(${k})">+</button> 
               <p id="amount">${shopping_cart[k].amount}</p>
               <button onclick="decrease(${k})">-</button> 
@@ -49,18 +49,23 @@ function orderedTemplate() {
 function dialogTemplate(k, price) {
   return /*html*/ `  
 <div class="shoppingDetails">
-    <p>${shopping_cart[k].name}</p> <p>x</p> <p id="amount">${
-    shopping_cart[k].amount
-  }</p> 
-</div>
+    <p>${shopping_cart[k].name}</p>
 <p>${price.toFixed(2)} $</p> 
+</div>
+<div class="cartDetails">
+        <div class="cartDetailsDiv">
+              <button onclick="increase(${k})">+</button> 
+              <p id="amount">${shopping_cart[k].amount}</p>
+              <button onclick="decrease(${k})">-</button> 
+        </div>
+    </div>
     <br>    
     `;
 }
 
 function crossInDialogTemplate() {
   return /*html*/ `
-              <div class="cross"><img src="/Material/cross.png" alt="cross" onclick="closeDialog()" class="crossImg"></div>`;
+              <div class="cross"><img src="/Material/cross.png" alt="cross" onclick="closeDialog()" class="crossImg"></div><br><br>`;
 }
 
 function toOrderButtonTemplate() {

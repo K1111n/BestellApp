@@ -113,6 +113,16 @@ nav{
     justify-content: center;
     gap: 25px;
 }
+.cartDetailsDiv{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.cartDetailsDiv button{
+    border-radius: 25%;
+    scale: 1.5;
+}
+
 .addButtonContainer{
     display: flex;
     align-items: center;
@@ -161,8 +171,8 @@ dialog{
     justify-content: flex-end;
 }
 .crossImg{
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
     opacity: 0.7;
     cursor: pointer;
 }

@@ -48,6 +48,22 @@ function renderShoppingCart() {
   document.getElementById("orderButton").classList.remove("d_none");
 }
 
+function renderDialog() {
+  getAnythingLocalStorage();
+  let dialogRef = document.getElementById("dialog");
+  dialogRef.innerHTML = "";
+  dialogRef.innerHTML += crossInDialogTemplate();
+  for (let k = 0; k < shopping_cart.length; k++) {
+    let amount = `${shopping_cart[k].amount}`;
+    let priceForOne = `${shopping_cart[k].price}`;
+    let price = amount * priceForOne;
+    price = parseFloat(price.toFixed(2));
+    dialogRef.innerHTML += dialogTemplate(k, price);
+    dialogRef.showModal();
+  }
+  dialogRef.innerHTML += toOrderButtonTemplate();
+}
+
 function changeFullCost() {
   let fullcostRef = document.getElementById("fullCost");
   fullcostRef.innerHTML = fullCost.toFixed(2);
@@ -70,6 +86,7 @@ function increase(k) {
   shopping_cart[k].amount++;
   saveAnythingLocalStorage();
   renderShoppingCart();
+  renderDialog();
 }
 
 function decrease(k) {
@@ -77,6 +94,7 @@ function decrease(k) {
     shopping_cart[k].amount--;
     saveAnythingLocalStorage();
     renderShoppingCart();
+    renderDialog();
   } else {
     cancelThisDishCompletly(k);
   }
@@ -93,6 +111,10 @@ function cancelThisDishCompletly(k) {
   }
   saveAnythingLocalStorage();
   renderShoppingCart();
+  renderDialog();
+  if (shopping_cart.length == 0) {
+    closeDialog();
+  }
 }
 
 function order() {
@@ -125,22 +147,6 @@ function closeDialog() {
   dialogRef.close();
   let dialogAfterOrderRef = document.getElementById("dialogAfterOrder");
   dialogAfterOrderRef.close();
-}
-
-function renderDialog() {
-  getAnythingLocalStorage();
-  let dialogRef = document.getElementById("dialog");
-  dialogRef.innerHTML = "";
-  dialogRef.innerHTML += crossInDialogTemplate();
-  for (let k = 0; k < shopping_cart.length; k++) {
-    let amount = `${shopping_cart[k].amount}`;
-    let priceForOne = `${shopping_cart[k].price}`;
-    let price = amount * priceForOne;
-    price = parseFloat(price.toFixed(2));
-    dialogRef.innerHTML += dialogTemplate(k, price);
-    dialogRef.showModal();
-  }
-  dialogRef.innerHTML += toOrderButtonTemplate();
 }
 
 function showCart() {
