@@ -133,6 +133,10 @@ nav {
     justify-content: space-around;
 }
 
+.fullDish:hover {
+    background-color: #1b0e02;
+}
+
 .dish {
     width: 70%;
 }
