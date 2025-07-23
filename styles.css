@@ -1,6 +1,7 @@
 html {
     scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
+    scrollbar-color: black #f7d1ae;
 }
 
 body {
@@ -127,6 +128,7 @@ nav {
 .shoppingDetails {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 15px;
 }
 
@@ -208,15 +210,19 @@ dialog {
     background-color: black;
     font-weight: bold;
     color: white;
-    min-width: 300px;
+    min-width: 270px;
     padding-right: 0;
     padding-top: 0;
+}
+
+.pricesInDialog {
+    padding-right: 15px;
 }
 
 #dialogBody {
     overflow-y: auto;
     max-height: 300px;
-    min-width: 300px;
+    min-width: 250px;
     margin: 30px 0px 30px 5px;
 }
 

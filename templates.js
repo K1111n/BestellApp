@@ -61,7 +61,7 @@ function dialogTemplate(k, price) {
   return /*html*/ `  
     <div class="shoppingDetails">
           <p>${shopping_cart[k].name}</p>
-          <p>${price.toFixed(2)} $</p> 
+          <p class="pricesInDialog">${price.toFixed(2)} $</p> 
     </div>
     <div class="cartDetails">
         <div class="cartDetailsDiv">
