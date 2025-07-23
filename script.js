@@ -152,17 +152,14 @@ function order() {
 
 function orderFromDialog() {
   shopping_cart = [];
-  let fullcostInSmallCartAtBottomRef = document.getElementById(
-    "fullCostInSmallCartAtBottom"
-  );
+  let fullcostInSmallCartAtBottomRef = document.getElementById("fullCostInSmallCartAtBottom");
   fullcostInSmallCartAtBottomRef.innerHTML = 0;
-  shopping_cart = [];
+  saveAnythingLocalStorage();
   renderShoppingCart();
   let dialogRef = document.getElementById("dialog");
   dialogRef.close();
   let dialogAfterOrderRef = document.getElementById("dialogAfterOrder");
   dialogAfterOrderRef.showModal();
-  saveAnythingLocalStorage();
 }
 
 function closeDialog() {
