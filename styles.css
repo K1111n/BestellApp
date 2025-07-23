@@ -1,9 +1,10 @@
-html{
+html {
     scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
 }
-body{
-    margin:0;
+
+body {
+    margin: 0;
     background-color: black;
     color: white;
     display: flex;
@@ -11,44 +12,55 @@ body{
     align-items: center;
     flex-direction: column;
 }
-header img, footer img{
+
+header img,
+footer img {
     height: auto;
     width: 200px;
     padding: 10px;
 }
-header,footer{
+
+header,
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-main{
+
+main {
     min-height: 2400px;
     max-height: 3000px;
     max-width: 2000px;
     background-color: black;
-    color: white;    
+    color: white;
     display: flex;
     width: 100%;
 }
-h1, h2{
+
+h1,
+h2 {
     text-align: center;
 }
-#menu{
+
+#menu {
     width: 75%;
     text-align: center;
 }
-.menu-img{
+
+.menu-img {
     width: 100%;
     height: 200px;
     background-position: center;
-    object-fit:cover;
+    object-fit: cover;
 }
-#menu-logo{
+
+#menu-logo {
     width: 60px;
     height: 60px;
     margin-top: -30px;
 }
-#shopping_cart{
+
+#shopping_cart {
     width: 25%;
     position: sticky;
     top: 100px;
@@ -63,90 +75,110 @@ h1, h2{
     margin: 10px;
     padding: 10px;
 }
-#shopping_cart img{
+
+#shopping_cart img {
     width: 50px;
     height: 50px;
 }
-#menu-section{
+
+#menu-section {
     text-align: center;
 }
-.price{
+
+.price {
     color: red;
 }
-button{
+
+button {
     cursor: pointer;
     background-color: #ff8008;
     font-weight: bold;
     color: white;
 }
-button:hover{
+
+button:hover {
     background-color: orange;
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
 }
-a:hover{
-    color:#ff8008;
+
+a:hover {
+    color: #ff8008;
 }
-nav{
+
+nav {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-.row{
+
+.row {
     display: flex;
     align-items: center;
     gap: 3px;
 }
-.shoppingDetails{
+
+.shoppingDetails {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.fullDish{
+
+.fullDish {
     display: flex;
     justify-content: space-around;
 }
-.dish{
+
+.dish {
     width: 70%;
 }
-.cartDetails{
+
+.cartDetails {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 25px;
 }
-.cartDetailsDiv{
+
+.cartDetailsDiv {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.cartDetailsDiv button{
+
+.cartDetailsDiv button {
     border-radius: 25%;
-    scale: 1.5;
-    padding-block: 0;;
+    scale: 1.1;
+    padding-block: 0;
+    ;
 }
 
-.addButtonContainer{
+.addButtonContainer {
     display: flex;
     align-items: center;
 }
-.addButton{
+
+.addButton {
     width: 40px;
     height: 40px;
 }
-.addButton:hover{
+
+.addButton:hover {
     cursor: pointer;
     opacity: 0.5;
 }
-#smallCartContainer{
+
+#smallCartContainer {
     display: flex;
     justify-content: center;
     position: sticky;
     bottom: 30px;
 }
-#smallCartAtBottom{
+
+#smallCartAtBottom {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,47 +186,55 @@ nav{
     background-color: orange;
     border-radius: 20px;
     width: 20%;
-    font-weight:bolder;
+    font-weight: bolder;
     padding-left: 70px;
     padding-right: 70px;
 }
-#smallCartAtBottom:hover{
+
+#smallCartAtBottom:hover {
     cursor: pointer;
     background-color: #ff8008;
 }
-dialog{
+
+dialog {
     background-color: black;
-    padding:50px;
-    font-weight:bold;
+    padding: 50px;
+    font-weight: bold;
     color: white;
 }
-.d_none{
+
+.d_none {
     display: none;
 }
-.cross{
+
+.cross {
     display: flex;
     justify-content: flex-end;
 }
-.crossImg{
+
+.crossImg {
     height: 20px;
     width: 20px;
     opacity: 0.7;
     cursor: pointer;
 }
-.crossImg:hover{
+
+.crossImg:hover {
     opacity: 0.9;
 }
 
 @media (max-width:1000px) {
-    #shopping_cart{
+    #shopping_cart {
         display: none;
     }
-    #menu{
+
+    #menu {
         width: 100%;
     }
 }
+
 @media (min-width:1000px) {
-    #smallCartContainer{
+    #smallCartContainer {
         display: none;
     }
 }

@@ -31,9 +31,19 @@ function shoppingCartTemplate(k, price) {
     </div>
     <div class="cartDetails">
         <div class="cartDetailsDiv">
-              <button onclick="increase(${k})">+</button> 
+              <button onclick="increase(${k})">
+                  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="40" height="40" rx="8" fill="#ff8008"/>
+                      <path d="M20 12V28M12 20H28" stroke="#000000" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+              </button> 
               <p id="amount">${shopping_cart[k].amount}</p>
-              <button onclick="decrease(${k})">-</button> 
+              <button onclick="decrease(${k})">
+                <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="#ff8008"/>
+                    <path d="M12 20H28" stroke="#000000" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </button> 
         </div>
     </div>
     `;
@@ -55,9 +65,19 @@ function dialogTemplate(k, price) {
     </div>
     <div class="cartDetails">
         <div class="cartDetailsDiv">
-              <button onclick="increaseInDialog(${k})">+</button> 
+              <button onclick="increaseInDialog(${k})">
+                  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="40" height="40" rx="8" fill="#ff8008"/>
+                      <path d="M20 12V28M12 20H28" stroke="#000000" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+              </button> 
               <p id="amount">${shopping_cart[k].amount}</p>
-              <button onclick="decreaseInDialog(${k})">-</button> 
+              <button onclick="decreaseInDialog(${k})">
+                  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="40" height="40" rx="8" fill="#ff8008"/>
+                      <path d="M12 20H28" stroke="#000000" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+              </button> 
         </div>
     </div>
     <br>    
@@ -67,12 +87,20 @@ function dialogTemplate(k, price) {
 function crossInDialogTemplate() {
   return /*html*/ `
               <div class="cross">
-                  <img src="/Material/cross.png" alt="cross" onclick="closeDialog()" class="crossImg">
+                  <img src="/Material/cross.svg" alt="cross" onclick="closeDialog()" class="crossImg">
               </div>
               <br>
               <br>`;
 }
 
 function toOrderButtonTemplate() {
-  return /*html*/ `<button onclick="orderFromDialog()">Order here</button>`;
+  return /*html*/ `
+  <button onclick="orderFromDialog()">
+      <svg width="160" height="48" xmlns="http://www.w3.org/2000/svg">
+      <rect width="160" height="48" rx="8" fill="#ff8008"/>
+            <text x="80" y="30" text-anchor="middle" fill="#000000" font-size="18" font-family="Arial, sans-serif">
+                Order here
+            </text>
+      </svg>
+  </button>`;
 }
