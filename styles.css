@@ -209,13 +209,15 @@ dialog {
     font-weight: bold;
     color: white;
     min-width: 300px;
+    padding-right: 0;
+    padding-top: 0;
 }
 
 #dialogBody {
     overflow-y: auto;
     max-height: 300px;
     min-width: 300px;
-    margin: 30px 5px;
+    margin: 30px 0px 30px 5px;
 }
 
 .d_none {
