@@ -211,6 +211,11 @@ dialog {
     color: white;
 }
 
+#dialogBody {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
 .d_none {
     display: none;
 }

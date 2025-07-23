@@ -8,7 +8,7 @@ let shopping_cart = [];
  */
 function init() {
   renderMenu();
-  renderShoppingCart()
+  renderShoppingCart();
 }
 
 /**
@@ -82,17 +82,22 @@ function renderShoppingCart() {
 function renderDialog() {
   getAnythingLocalStorage();
   let dialogRef = document.getElementById("dialog");
-  dialogRef.innerHTML = "";
-  dialogRef.innerHTML += crossInDialogTemplate();
+  let dialogHeaderRef = document.getElementById("dialogHeader");
+  dialogHeaderRef.innerHTML = "";
+  let dialogBodyRef = document.getElementById("dialogBody");
+  dialogBodyRef.innerHTML = "";
+  let dialogFooterRef = document.getElementById("dialogFooter");
+  dialogFooterRef.innerHTML = "";
+  dialogHeaderRef.innerHTML += crossInDialogTemplate();
   for (let k = 0; k < shopping_cart.length; k++) {
     let amount = `${shopping_cart[k].amount}`;
     let priceForOne = `${shopping_cart[k].price}`;
     let price = amount * priceForOne;
     price = parseFloat(price.toFixed(2));
-    dialogRef.innerHTML += dialogTemplate(k, price);
+    dialogBodyRef.innerHTML += dialogTemplate(k, price);
     dialogRef.showModal();
   }
-  dialogRef.innerHTML += toOrderButtonTemplate();
+  dialogFooterRef.innerHTML += toOrderButtonTemplate();
 }
 
 /**
