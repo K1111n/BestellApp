@@ -3,7 +3,7 @@ let fullCost = document.getElementById("fullcost");
 let shopping_cart = [];
 
 /**
- * Renders the Meal-Course 
+ * Renders the Meal-Courses
  */
 function renderMenu() {
   let menuRef = document.getElementById("menu-section");
@@ -28,7 +28,7 @@ function renderDishDetails() {
 }
 
 /**
- * Increase the Amount of already in Cart existing Dish || Adds selected dish to the cart
+ * Increase the Amount of already in Cart existing Dish || Adds selected dish to the cart; Saves Data in Local Storage
  * @param {index of Meal-Course} i 
  * @param {index of dish in Meal-Course} j 
  */
@@ -66,6 +66,7 @@ function renderShoppingCart() {
   changeFullCost();
   document.getElementById("orderButton").classList.remove("d_none");
 }
+
 /**
  * Renders Dialog with Information from Storage
  */
