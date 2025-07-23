@@ -91,7 +91,7 @@ function crossInDialogTemplate() {
               </div>
               <br />
               <img src="/Material/cart.svg" alt="shopping_cart" style="height: 100px;"/>
-              <br>`;
+              `;
 }
 
 function toOrderButtonTemplate() {

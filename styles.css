@@ -206,14 +206,16 @@ nav {
 
 dialog {
     background-color: black;
-    padding: 50px;
     font-weight: bold;
     color: white;
+    min-width: 300px;
 }
 
 #dialogBody {
     overflow-y: auto;
     max-height: 300px;
+    min-width: 300px;
+    margin: 30px 5px;
 }
 
 .d_none {
