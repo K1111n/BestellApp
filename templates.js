@@ -89,7 +89,8 @@ function crossInDialogTemplate() {
               <div class="cross">
                   <img src="/Material/cross.svg" alt="cross" onclick="closeDialog()" class="crossImg">
               </div>
-              <br>
+              <br />
+              <img src="/Material/cart.svg" alt="shopping_cart" style="height: 100px;"/>
               <br>`;
 }
 
