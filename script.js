@@ -4,6 +4,15 @@ let shopping_cart = [];
 
 /**
  * Renders the Meal-Courses
+ * Renders Cart with Informations from Storage
+ */
+function init() {
+  renderMenu();
+  renderShoppingCart()
+}
+
+/**
+ * Renders the Meal-Courses
  */
 function renderMenu() {
   let menuRef = document.getElementById("menu-section");
