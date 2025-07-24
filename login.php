@@ -10,6 +10,7 @@ if($username == 'test@email.de' && $password == 'testpassword') {
     exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
