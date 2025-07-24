@@ -21,7 +21,7 @@ if($username == 'test@email.de' && $password == 'testpassword') {
 <body style="display:flex;flex-direction:column;">
     <section class="card">
         <h2>False Username or Password</h2><br>
-        <a href="login.html">Back to Login</a>
+        <a href="index.html">Back to Login</a>
     </section>
 </body>
 </html>
