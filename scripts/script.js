@@ -2,6 +2,12 @@ let cost = document.getElementById("cost");
 let fullCost = document.getElementById("fullcost");
 let shopping_cart = [];
 
+if ($_SESSION['logged_in'] = true) {
+  document.getElementById("loginOverlay").classList.add("d_none")
+  document.getElementById("loggedInUser").classList.remove("d_none");
+  document.getElementById("loggedInUser").classList.remove("loggedInUser");
+}
+
 /**
  * Renders the Meal-Courses
  * Renders Cart with Informations from Storage

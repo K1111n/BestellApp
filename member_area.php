@@ -19,6 +19,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     <section class="card">
         <h1>Member Area</h1>
         <p>Welcome to the Member Area!</p>
+        <a href="index.html">Back to Login</a>
     </section>
 </body>
 </html>

@@ -17,6 +17,10 @@
   <body onload="init()">
     <header>
       <img src="/Material/Logo.png" alt="Logo" />
+      <section id="loggedInUser" class="d_none">
+        <img src="/Material/no-profile-pic.webp" alt="Icon of User">
+        <p>test@email.de</p>
+      </section>
     </header>
     <main>
       <section id="menu">
@@ -50,7 +54,8 @@
             </dialog>
         </div>
       </section>
-       <section id="loginOverlay" class="">
+      <section id="shopping_cart">
+        <section id="loginOverlay" class="">
         <form action="login.php" method="post" class="card" id="loginForm">
           <h2>Login</h2>
           <label for="username">Username:</label>
@@ -61,7 +66,7 @@
           <button type="submit" id="loginButton">Login</button>
         </form>
       </section>
-      <section id="shopping_cart">
+      <section id="cartSection">
         <h2>Cart</h2>
         <br />
         <img src="/Material/cart.svg" alt="shopping_cart" />
@@ -78,6 +83,7 @@
             </text>
           </svg>
         </button>
+        </section>
       </section>
     </main>
     <footer>
